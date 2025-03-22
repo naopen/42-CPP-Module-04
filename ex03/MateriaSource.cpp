@@ -3,7 +3,7 @@
 MateriaSource::MateriaSource() {
     std::cout << "MateriaSource created" << std::endl;
     for (int i = 0; i < 4; i++) {
-        _learned[i] = nullptr;
+        _learned[i] = NULL;
     }
 }
 
@@ -14,7 +14,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
         if (other._learned[i]) {
             _learned[i] = other._learned[i]->clone();
         } else {
-            _learned[i] = nullptr;
+            _learned[i] = NULL;
         }
     }
 }
@@ -26,7 +26,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
         for (int i = 0; i < 4; i++) {
             if (_learned[i]) {
                 delete _learned[i];
-                _learned[i] = nullptr;
+                _learned[i] = NULL;
             }
         }
 
@@ -35,7 +35,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
             if (other._learned[i]) {
                 _learned[i] = other._learned[i]->clone();
             } else {
-                _learned[i] = nullptr;
+                _learned[i] = NULL;
             }
         }
     }
@@ -79,7 +79,7 @@ AMateria* MateriaSource::createMateria(std::string const& type) {
             return _learned[i]->clone();
         }
     }
-    // Return nullptr if type not found
+    // Return NULL if type not found
     std::cout << "MateriaSource couldn't find materia of type: " << type << std::endl;
-    return nullptr;
+    return NULL;
 }

@@ -3,7 +3,7 @@
 Character::Character(const std::string& name) : _name(name) {
     std::cout << "Character created: " << _name << std::endl;
     for (int i = 0; i < 4; i++) {
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
     }
 }
 
@@ -14,7 +14,7 @@ Character::Character(const Character& other) : _name(other._name) {
         if (other._inventory[i]) {
             _inventory[i] = other._inventory[i]->clone();
         } else {
-            _inventory[i] = nullptr;
+            _inventory[i] = NULL;
         }
     }
 }
@@ -28,7 +28,7 @@ Character& Character::operator=(const Character& other) {
         for (int i = 0; i < 4; i++) {
             if (_inventory[i]) {
                 delete _inventory[i];
-                _inventory[i] = nullptr;
+                _inventory[i] = NULL;
             }
         }
 
@@ -37,7 +37,7 @@ Character& Character::operator=(const Character& other) {
             if (other._inventory[i]) {
                 _inventory[i] = other._inventory[i]->clone();
             } else {
-                _inventory[i] = nullptr;
+                _inventory[i] = NULL;
             }
         }
     }
@@ -80,7 +80,7 @@ void Character::unequip(int idx) {
     if (idx >= 0 && idx < 4 && _inventory[idx]) {
         std::cout << "Character " << _name << " unequipped " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
         // Don't delete, just unequip as required
-        _inventory[idx] = nullptr;
+        _inventory[idx] = NULL;
     } else {
         std::cout << "Character " << _name << " failed to unequip slot " << idx << std::endl;
     }

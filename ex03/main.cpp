@@ -51,11 +51,11 @@ int main() {
     // Test createMateria
     AMateria* ice = source->createMateria("ice");
     AMateria* cure = source->createMateria("cure");
-    AMateria* unknown = source->createMateria("unknown"); // Should return nullptr
+    AMateria* unknown = source->createMateria("unknown"); // Should return NULL
 
     std::cout << "Ice type: " << ice->getType() << std::endl;
     std::cout << "Cure type: " << cure->getType() << std::endl;
-    std::cout << "Unknown type: " << (unknown ? unknown->getType() : "nullptr") << std::endl;
+    std::cout << "Unknown type: " << (unknown ? unknown->getType() : "NULL") << std::endl;
 
     // Test Character functionality
     std::cout << "\n----- Character Test -----" << std::endl;
@@ -72,7 +72,7 @@ int main() {
     alice->use(-1, *bob2); // Should do nothing (invalid slot)
 
     // Store unequipped Materias (floor)
-    AMateria* floor[10] = {nullptr};
+    AMateria* floor[10] = {NULL};
     int floorIndex = 0;
 
     // Test unequip
